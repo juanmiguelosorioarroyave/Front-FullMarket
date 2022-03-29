@@ -1,12 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import SingIn from './components/pages/SingIn/SingIn';
+//import SingIn from './components/pages/SingIn/SingIn';
+import Resgiter from './components/pages/Register/Resgiter';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
-    <SingIn />
+    <Resgiter />
   </React.StrictMode>,
   document.getElementById('root')
 );

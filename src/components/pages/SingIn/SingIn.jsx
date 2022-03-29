@@ -14,7 +14,7 @@ const SingIn = () => {
         <img className='logo' src={logo} alt='Logo' />
         <img className='Name' src={logo_name} alt='Name'/>
       </div>
-      <div>
+      <div  >
         <img className="Login" src={Imag_login} alt='Login' />
         <div className="container">
           <div className="img">
