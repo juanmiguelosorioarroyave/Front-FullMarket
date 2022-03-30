@@ -10,12 +10,12 @@ body{
 }
 
 .Register {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 35%;
-    height: 100%;
-    z-index: -1;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	width: 32%;
+	height: 91%;
+	z-index: -1;
 }
 
 .container-Resgiter{
@@ -28,21 +28,29 @@ body{
 }
 
 div.Name-compani {
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    height: 80px;
-    z-index: 1;
-    background-color: #ffffff;
-    border-bottom: 2px solid #040404;
+	text-align: center;
+	display: flex;
+	justify-content: center;
+	height: 90px;
+	z-index: 1;
+	background-color: #ffffff;
+	border-bottom: 3px solid #040404;
 }
 
+
 img.logo {
-    width: 8%;
-    position: fixed;
-    height: 17%;
-    top: -2%;
-    left: 38%;
+	width: 8%;
+	position: fixed;
+	height: 16%;
+	top: -3%;
+	left: 39%;
+}
+
+img.Name {
+	position: fixed;
+	height: 15%;
+	top: -3%;
+	left: 48%;
 }
 
 .img{
