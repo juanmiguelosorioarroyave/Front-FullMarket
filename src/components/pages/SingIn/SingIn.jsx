@@ -1,7 +1,7 @@
 import React from 'react'
+import axios from 'axios'
 import './SingIn.css'
 import Imag_login from '../../../images/imgLogin.png'
-import img_user from '../../../images/account.png'
 import logo from '../../../images/FMarket1.png'
 import logo_name from '../../../images/FMarket2.png'
 
