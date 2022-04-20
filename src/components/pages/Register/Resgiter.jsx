@@ -4,11 +4,10 @@ import logo_name from '../../../images/FMarket2.png'
 import Imag_Register from '../../../images/imgRegister.png'
 import './Register.css'
 
-
 function Resgiter() {
 
   const url = 'https://www.datos.gov.co/resource/xdk5-pm3f.json'
-  const [Depart , setDepart] = useState(0)
+  const [Depart , setDepart] = useState()
   const fetchApi = async () => {
     const responde = await fetch(url)
     const responseDepart = await responde.json()

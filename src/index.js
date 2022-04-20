@@ -1,15 +1,13 @@
 import React from 'react';
 import ReactDOM from "react-dom";
-import { BrowserRouter } from "react-router-dom";
-import * as serviceWorker from "./"
-//import SingIn from './components/pages/SingIn/SingIn';
-import Resgiter from './components/pages/Register/Resgiter';
+import SingIn from './components/pages/SingIn/SingIn';
+//import Resgiter from './components/pages/Register/Resgiter';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Resgiter />
+    <SingIn />
   </React.StrictMode>,
   document.getElementById('root')
 );
