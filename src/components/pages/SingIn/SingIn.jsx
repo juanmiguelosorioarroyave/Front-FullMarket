@@ -1,27 +1,35 @@
-import React from 'react'
-//import { useRef, useState, useEffect} from 'react';
+import React, { useState } from 'react'
+import axios from 'axios'
 import './SingIn.css'
 import Imag_login from '../../../images/imgLogin.png'
 import logo from '../../../images/FMarket1.png'
 import logo_name from '../../../images/FMarket2.png'
 
-const SingIn = () => {
-  //const userRef = useRef();
-  //const errRef = useRef();
+export const Form_login=()=> {
 
-  //const [email, setEmail] = useState('');
-  //const [pwd, setPwd] = useState('');
-  //const [errMsg, setErrMsg] = useState('');
-  //const [success, setSuccess] = useState(false);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  
+  var formDataLogin = new FormData();
 
-  //useEffect(() => {
-  //  userRef.current.focus();
-  //}, [])
-
-  //useEffect(() => {
-  //  setErrMsg('');
-  //}, {email, pwd})
- 
+  const HandleSubmit=async (e) => {
+    formDataLogin.append("email", email)
+    formDataLogin.append("password", password);
+      
+    console.log(formDataLogin);
+    axios.get('https://fullmarket-provitional-backend.herokuapp.com/login', formDataLogin, { 
+    headers: {
+      "content-type": "multipart/form-data",
+    },
+  })
+  .then((res) => {
+    console.log(res);
+  })
+  .catch((err) => {
+    console.log(err);
+    });
+    e.preventDefault()
+  }
   return (
     <body>
       <div className='Name-compani'>
@@ -33,22 +41,22 @@ const SingIn = () => {
         <div className="container">
           <div className="img">
           </div>
-          <div className="login-content">
-            <div className='formulari'>
-              <h2 className="title">Inicar Sesion</h2> 
-              <p ref={errRef} className={errMsg ? "errmeg" : "offscreen"} aria-live="assertive">{errMsg}</p>
-                <input type="text" id='email' ref={useRef} placeholder='Correo Electronico' />
-                <input type="password" placeholder='password' />
-              <button className="btn">Iniciar Sesion </button>
-               <a href="foo">Forgot Password?</a>
-               <div className="hr" />
+          <form onChange={HandleSubmit} className='Form_login'>  
+              <div className="login-content">
+                <div className='formulari'>
+                  <h2 className="title">Inicar Sesion</h2> 
+                    <input type="text" id='email' placeholder='Correo Electronico' value={email} onChange={(e) => setEmail(e.target.value)} />
+                    <input type="password" id='password' placeholder='password' autoComplete='off' value={password} onChange={(e) => setPassword(e.target.value)} />
+                  <button className="btn">Iniciar Sesion </button>
+                  <a href="foo" >Forgot Password?</a>
+                  <div className="hr" />
+                  </div>
+                  <button className="btn-new-acount">Crear cuenta nueva</button>
               </div>
-              <button className="btn-new-acount">Crear cuenta nueva</button>
-          </div>
+            </form> 
         </div>
       </div>
     </body>
   )
 }
-
-export default SingIn
+export default Form_login
