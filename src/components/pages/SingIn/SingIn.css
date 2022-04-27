@@ -9,15 +9,6 @@ body{
     overflow: hidden;
 }
 
-.Login {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 35%;
-    height: 100%;
-    z-index: -1;
-}
-
 .container{
     width: 85vw;
     height: 100vh;
@@ -31,35 +22,26 @@ div.Name-compani {
     text-align: center;
     display: flex;
     justify-content: center;
-    height: 80px;
-    z-index: 1;
+    height: 128px;
     background-color: #ffffff;
     border-bottom: 2px solid #040404;
 }
 
-img.logo {
-    width: 8%;
-    position: fixed;
-    height: 17%;
-    top: -2%;
-    left: 38%;
+.Login {
+    position: absolute;
+    bottom: 0;
+    left: 0px;
+    width: 35%;
+    height: 100%;
+    z-index: -1;
 }
-
 .img{
 	display: flex;
 	justify-content: flex-end;
 	align-items: center;
 }
 
-.login-content {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    text-align: center;
-    flex-direction: column;
-}
-
-.formulari input{
+.form input{
 	font-family: 'Poppins', sans-serif;
     outline: 0;
     background: #f2f2f2;
@@ -69,6 +51,13 @@ img.logo {
     padding: 15px;
     box-sizing: border-box;
     font-size: 16px;
+}
+
+div.formulari {
+    width: 30rem;
+    position: absolute;
+    margin-top: 10rem;
+    left: 65rem;
 }
 
 div.hr {
@@ -82,20 +71,50 @@ div.hr {
 	border-width: 1px;
 }
 
+img.logo {
+    position: absolute;
+    width: 10%;
+    top: -3%;
+    left: 38%;
+}
+
+img.Name {
+    position: absolute;
+    width: 12%;
+    right: 39%;
+    top: -6.5%;
+}
+
 .img img{
 	width: 500px;
 }
 
-form{
-	width: 360px;
+.login-content {
+    justify-content: flex-start;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    position: absolute;
+    right: 20rem;
+    top: 20rem;
 }
 
-.login-content img {
-    height: 80px;
-    position: relative;
-    top: 22px;
+div.content-title {
+    text-align: center;
+    width: 35%;
+    display: flex;
+    justify-content: center;
+    height: 70px;
+    background-color: #040404;
 }
 
+h2.title {
+    position: absolute;
+    color: #f0f0f0;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.4cm;
+    top: 13%;
+}
 .login-content h2 {
     margin: 55px 0;
     color: #333;
@@ -135,45 +154,24 @@ a:hover{
     border-radius: 25px;
     outline: none;
     border: none;
-    background-image: linear-gradient(to right, #f66f00, #f66f00, #ede610);
-    background-size: 200%;
+    background-image: linear-gradient(to right, #ff9d4d, #e34414, #ede610);
+    background-size: 230%;
     font-size: 1.2rem;
     color: #fff;
     font-family: 'Poppins', sans-serif;
-    margin: 1rem 0;
+    margin: 2rem 0;
     cursor: pointer;
-    transition: .5s;
+    transition: .8s;
 }
 .btn:hover{
 	background-position: right;
 }
 
-button.btn-new-acount {
-    width: 25%;
-    right: 19rem;
-    top: 30rem;
-    position: absolute;
-    height: 50px;
-    border-radius: 25px;
-    outline: none;
-    border: none;
-    background-image: linear-gradient(to right, #f66f00, #f66f00, #ede610);
-    background-size: 200%;
-    font-size: 1.2rem;
-    color: #fff;
-    font-family: 'Poppins', sans-serif;
-    margin: 1rem 0;
-    cursor: pointer;
-    transition: .5s;
-}
-.btn-new-acount:hover{
-	background-position: right;
-}
 
-
-@media screen and (max-width: 1050px){
+/* @media screen and (max-width: 1050px){
 	.container{
 		grid-gap: 5rem;
+
 	}
 }
 
@@ -208,4 +206,22 @@ button.btn-new-acount {
 	.login-content{
 		justify-content: center;
 	}
+} */
+
+/* iPads (portrait) 
+#Dispositivo = Tablets, Ipads (vertical) 
+#Resolucion = B/w 768px to 1024px */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) 
+and (orientation : portrait) {
+
+}
+ 
+/* Ordenadores de sobremesa y portátiles */
+@media only screen and (min-width : 1224px) {
+ 
+}
+ 
+/* Pantallas grandes */
+@media only screen and (min-width : 1824px) {
+
 }
