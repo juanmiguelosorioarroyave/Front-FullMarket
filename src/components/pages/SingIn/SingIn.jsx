@@ -42,8 +42,8 @@ const User=() => {
               </div>
               <div className="login-content">
                 <div className='form'>
-                     <input onChange={(e) => setEmail(e.target.value)} value={email} type="email" placeholder='Correo Electronico'></input>
-                    <input onChange={(e) => setPassword(e.target.value)} value={password} type="password" placeholder='password'></input>
+                     <input onChange={(e) => setEmail(e.target.value)} value={email} type="email" placeholder='Correo Electronico' required={true}></input>
+                    <input onChange={(e) => setPassword(e.target.value)} value={password} type="password" placeholder='password' required={true}></input>
                   <button  type='submit' className="btn">Iniciar Sesion </button>
                   <a href="foo" >Forgot Password?</a>
                   <div className="hr" />
