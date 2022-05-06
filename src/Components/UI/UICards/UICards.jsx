@@ -1,6 +1,6 @@
 import React from "react";
 import './UICards.css'
-// import { NavLink } from "react-router-dom";
+import { Navigate } from "react-router-dom";
 import { UIButtons } from "../UIButtons/UIButtons.jsx";
 
 export const UICards = ({
@@ -18,11 +18,9 @@ export const UICards = ({
         ) {
           localStorage.removeItem('uid');
           alert("si existe en localStorage!!"); 
-          this.props.history.push("")     
         } 
         else {
           alert("No esta logueado inicie sesion")
-          this.props.history.push("/")  
         }
     });
   }

@@ -27,11 +27,11 @@ const SingIn = () => {
         console.log(token);
         window.localStorage.setItem("token", token)
         window.localStorage.setItem("uiduser", decoded.uid)
-        if (dataForm === token  || (window.sessionStorage && window.sessionStorage.getItem('token') === token)) {
-          alert("datos Correctos")
-    } else {
-        alert("Datos incorectos");
-    }
+    //     if (dataForm === token  || (window.sessionStorage && window.sessionStorage.getItem('token') === token)) {
+    //       alert("datos Correctos")
+    // } else {
+    //     alert("Datos incorectos");
+    // }
       })
       .catch((err) => {
         console.log(err);
