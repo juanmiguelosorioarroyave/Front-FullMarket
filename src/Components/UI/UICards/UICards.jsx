@@ -1,6 +1,6 @@
 import React from "react";
 import './UICards.css'
-//import { NavLink } from "react-router-dom";
+// import { NavLink } from "react-router-dom";
 import { UIButtons } from "../UIButtons/UIButtons.jsx";
 
 export const UICards = ({
@@ -17,13 +17,16 @@ export const UICards = ({
           && window.localStorage.getItem('uiduser')
         ) {
           localStorage.removeItem('uid');
-          alert("si existe en localStorage!!");
-          
-        } else {
+          alert("si existe en localStorage!!"); 
+          this.props.history.push("")     
+        } 
+        else {
           alert("No esta logueado inicie sesion")
+          this.props.history.push("/")  
         }
     });
   }
+
   return (
     <>
       <div className="header-Card">
@@ -40,14 +43,12 @@ export const UICards = ({
           <h2>{nameProduct}</h2>
           <p>Estado: {conditionProduct}</p>
           <div className="apply-Product">
-            {/* <NavLink to="/LogIn"> */}
               <UIButtons
                 class
                 Buttons="btn-Apply"
                 nameButtons="Aplicar"
                 onClick={onClick}
               ></UIButtons>
-            {/* </NavLink> */}
           </div>
         </div>
       </div>

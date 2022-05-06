@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { NavLink } from "react-router-dom"
 import axios from "axios";
 import jwtDecode from "jwt-decode";
 import Imag_login from "../../../images/imgLogin.png";
@@ -61,9 +62,10 @@ const SingIn = () => {
               type="password"
               placeholder="password"
             ></input>
+            <NavLink to="/LayoutCards">
             <button type="submit" className="btn">
               Iniciar Sesion{" "}
-            </button>
+            </button></NavLink>
             <a href="foo">Forgot Password?</a>
             <div className="hr" />
             <button className="btn">Crear cuenta nueva</button>
