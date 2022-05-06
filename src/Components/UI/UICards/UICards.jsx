@@ -1,29 +1,32 @@
 import React from "react";
 import './UICards.css'
-import { Navigate } from "react-router-dom";
+// import { NavLink } from "react-router-dom";
 import { UIButtons } from "../UIButtons/UIButtons.jsx";
+import { Navigate } from "react-router";
 
-export const UICards = ({
-  
+export const UICards = ({  
   typeProduct,
   imgProduct,
   nameProduct,
   conditionProduct,
 }) => {
-  const onClick= () => {
 
-    setInterval(function() {
-        if (window.localStorage.getItem('uiduser') !== null
-          && window.localStorage.getItem('uiduser')
-        ) {
-          localStorage.removeItem('uid');
-          alert("si existe en localStorage!!"); 
-        } 
-        else {
-          alert("No esta logueado inicie sesion")
-        }
+  const navigate =Navigate();
+  
+  const onClick = () => {
+    setInterval(function () {
+      if (window.localStorage.getItem("uiduser") !== null) {
+        alert("si existe en localStorage!!");
+        navigate('/')
+        //REDIRECCION
+      } else {
+        alert("No esta logueado inicie sesion");
+        //LOGUEATE
+      }
     });
-  }
+  };
+
+
 
   return (
     <>
@@ -41,6 +44,7 @@ export const UICards = ({
           <h2>{nameProduct}</h2>
           <p>Estado: {conditionProduct}</p>
           <div className="apply-Product">
+            {/* <NavLink  to="/"> */}
               <UIButtons
                 class
                 Buttons="btn-Apply"

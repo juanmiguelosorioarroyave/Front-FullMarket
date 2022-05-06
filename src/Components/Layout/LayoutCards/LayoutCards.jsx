@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { UICards } from "../../UI/UICards/UICards";
 
 
-
 export const LayoutCards = () => {
   const URL = "https://backend-fullmarket-py.herokuapp.com/getallproducts";
 
