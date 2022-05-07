@@ -12,7 +12,7 @@ export const UICards = ({
 }) => {
   const navigate = useNavigate();
   const VerifyCard= () => {
-
+        {
         if (window.localStorage.getItem('uiduser') !== null
           && window.localStorage.getItem('uiduser')
         ) {
@@ -22,7 +22,7 @@ export const UICards = ({
           alert("No esta logueado inicie sesion");
           navigate("/LayoutCards")
         }
-    ;
+    };
   }
 
   return (
