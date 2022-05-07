@@ -1,6 +1,6 @@
 import React from "react";
 import './UICards.css'
-// import { NavLink } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { UIButtons } from "../UIButtons/UIButtons.jsx";
 
 export const UICards = ({
@@ -10,21 +10,19 @@ export const UICards = ({
   nameProduct,
   conditionProduct,
 }) => {
-  const onClick= () => {
+  const navigate = useNavigate();
+  const VerifyCard= () => {
 
-    setInterval(function() {
         if (window.localStorage.getItem('uiduser') !== null
           && window.localStorage.getItem('uiduser')
         ) {
-          localStorage.removeItem('uid');
           alert("si existe en localStorage!!"); 
-          this.props.history.push("")     
         } 
         else {
-          alert("No esta logueado inicie sesion")
-          this.props.history.push("/")  
+          alert("No esta logueado inicie sesion");
+          navigate("/LayoutCards")
         }
-    });
+    ;
   }
 
   return (
@@ -47,7 +45,7 @@ export const UICards = ({
                 class
                 Buttons="btn-Apply"
                 nameButtons="Aplicar"
-                onClick={onClick}
+                onClick={VerifyCard}
               ></UIButtons>
           </div>
         </div>
