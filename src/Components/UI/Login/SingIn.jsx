@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-// import { NavLink } from "react-router-dom"
+import swal from "sweetalert";
 import axios from "axios";
 import jwtDecode from "jwt-decode";
 import Imag_login from "../../../images/imgLogin.png";
@@ -14,9 +14,33 @@ const SingIn = () => {
 
   var dataForm = new FormData();
   
-
+    const navigate = useNavigate();
+    const handleuser = () => {
+      if (window.localStorage.getItem('uiduser') !== null
+          && window.localStorage.getItem('uiduser')
+        ) {
+          swal({
+            title: "Datos Correctos",
+            text: "Bienvenido de nuevo",
+            icon: "success",
+            Button: "Acceptar",
+            timer: "2000"
+          })
+          navigate("/LayoutCards")
+        } 
+        else {
+          swal({
+            title: "Datos Incorrectos !!",
+            text: "Correo o contraseña incorrectos",
+            icon: "error",
+            Button: "Acceptar",
+            timer: "2000"
+          })
+          navigate("/")
+        }
+    }
   const HandleSubmit = async (e) => {
-    // const navigate = useNavigate();
+
     dataForm.append("email", email);
     dataForm.append("password", password);
     e.preventDefault();
@@ -30,12 +54,6 @@ const SingIn = () => {
         console.log(token);
         window.localStorage.setItem("token", token)
         window.localStorage.setItem("uiduser", decoded.uid)
-    //     if (dataForm === token  || (window.sessionStorage && window.sessionStorage.getItem('token') === token)) {
-    //       alert("")
-    // } else {
-    //     alert("Datos Corectos");
-    //     navigate("/LayoutCards")
-    // }
       })
       .catch((err) => {
         console.log(err);
@@ -66,7 +84,7 @@ const SingIn = () => {
               type="password"
               placeholder="password"
             ></input>
-            <button type="submit" className="btn">
+            <button type="submit" className="btn" onClick={handleuser} >
               Iniciar Sesion{" "}
             </button>
             <a href="foo">Forgot Password?</a>

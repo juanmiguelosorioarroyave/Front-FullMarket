@@ -12,17 +12,18 @@ export const UICards = ({
 }) => {
   const navigate = useNavigate();
   const VerifyCard= () => {
-        {
+        
         if (window.localStorage.getItem('uiduser') !== null
           && window.localStorage.getItem('uiduser')
         ) {
-          alert("si existe en localStorage!!"); 
+          alert("si existe en localStorage y puede aplicar a los productos!!"); 
+          navigate("/LayoutCards")
         } 
         else {
           alert("No esta logueado inicie sesion");
-          navigate("/LayoutCards")
+          navigate("/")
         }
-    };
+    ;
   }
 
   return (
