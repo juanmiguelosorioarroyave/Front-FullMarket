@@ -33,7 +33,7 @@ const SingIn = () => {
             title: "Datos Incorrectos !!",
             text: "Correo o contraseña incorrectos",
             icon: "error",
-            Button: "Acceptar",
+            Button: "Aceptar",
             timer: "2000"
           })
           navigate("/")
@@ -84,9 +84,9 @@ const SingIn = () => {
               type="password"
               placeholder="password"
             ></input>
-            <button type="submit" className="btn" onClick={handleuser} >
-              Iniciar Sesion{" "}
-            </button>
+              <button type="submit" className="btn" onClick={handleuser} >
+                Iniciar Sesion{" "}
+              </button>
             <a href="foo">Forgot Password?</a>
             <div className="hr" />
             <button className="btn">Crear cuenta nueva</button>
@@ -94,6 +94,7 @@ const SingIn = () => {
         </div>
       </form>
     </div>
+
   );
 };
 export default SingIn;
